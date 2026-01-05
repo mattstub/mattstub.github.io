@@ -1,0 +1,33 @@
+---
+layout: default
+title: Projects
+---
+
+<section class="hero">
+    <h1 class="hero-title">Projects</h1>
+    <p class="hero-bio">
+        Research collections, writing series, and ongoing explorations of topics I'm diving deep into.
+    </p>
+</section>
+
+<section class="posts-section">
+    <div class="projects-grid">
+        {% for project in site.projects %}
+        <article class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">{{ project.title }}</h3>
+                <time class="project-date">{{ project.date | date: "%Y" }}</time>
+            </div>
+            <p class="project-description">
+                {{ project.excerpt | strip_html }}
+            </p>
+            <div class="project-links">
+                <a href="{{ project.url | relative_url }}" class="project-link">View Details</a>
+                {% if project.github_url %}
+                <a href="{{ project.github_url }}" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                {% endif %}
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>

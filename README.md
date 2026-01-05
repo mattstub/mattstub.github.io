@@ -1,156 +1,264 @@
-# Journal by JekyllThemes.io – Instructions
+# Personal Blog Site
 
-If you have any questions or feedback about the theme, don't hesitate to reach out to hello@jekyllthemes.io for 1-to-1 support direct from the developers.
+A clean, minimal Jekyll-powered blog for writing, researching and showcasing projects. Built with markdown support for easy content creation and GitHub Pages hosting.
 
+## Design Philosophy
+
+Inspired by Brian Lovin's clean aesthetic with a custom dark Material Design theme. Features:
+- **Distinctive typography**: Crimson Pro for body text, JetBrains Mono for code/UI
+- **Dark screen palette**: Professional, easy on the eyes
+- **Minimal, content-focused**: No unnecessary elements
+- **Responsive**: Works beautifully on mobile and desktop
+- **Markdown-powered**: Write in markdown, publish as HTML
+
+## Quick Start
+
+### Deploying to GitHub Pages
+
+1. Push all files to your repository
+2. GitHub Pages will automatically build and deploy your site
+3. Your site will be live on your site (or `https://yourusername.github.io`)
+
+No build configuration needed - GitHub Pages handles Jekyll automatically!
+
+## Site Structure
+
+```
+/
+├── _config.yml         # Jekyll configuration
+├── _layouts/           # Page templates
+│   ├── default.html    # Base layout
+│   ├── post.html       # Blog post layout
+│   └── project.html    # Project layout
+├── _posts/             # Blog posts (markdown)
+│   └── YYYY-MM-DD-title.md
+├── _projects/          # Project pages (markdown)
+│   └── project-name.md
+├── index.html          # Homepage
+├── writing.html        # All posts listing
+├── projects.html       # Projects listing
+├── styles.css          # All styles
+└── Gemfile             # Ruby dependencies
+```
+
+## Writing a Blog Post
+
+### 1. Create a New Markdown File
+
+Create a file in `_posts/` with this naming format:
+```
+YYYY-MM-DD-post-title.md
+```
+
+Example: `2026-01-15-my-awesome-post.md`
+
+### 2. Add Front Matter
+
+Start your file with YAML front matter:
+
+```yaml
 ---
-
-## Getting started
-
-Copy the theme files to your website directory.
-
-To run the theme locally, navigate to the theme directory in your terminal and run `bundle install` to install the theme's dependencies. Then run `jekyll serve` to start the Jekyll server.
-
+layout: post
+title: "Your Post Title"
+date: 2026-01-15
+reading_time: 5
+excerpt: "A brief description that appears in post listings"
 ---
+```
 
-## Jekyll basics
+### 3. Write Your Content
 
-If you're not familiar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details, 
-or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/), and [creating pages](https://jekyllrb.com/docs/pages/).
+Write the rest in markdown:
 
+```markdown
+## This is a heading
+
+This is a paragraph with **bold** and *italic* text.
+
+- List item one
+- List item two
+
+[Link to something](https://example.com)
+
+```python
+# Code blocks work too!
+print("Hello, world!")
+```
+```
+
+### 4. Publish
+
+Just commit and push - GitHub Pages will build it automatically!
+
+```bash
+git add _posts/2026-01-15-my-awesome-post.md
+git commit -m "Add new post"
+git push
+```
+
+## Adding a Project
+
+### 1. Create a Markdown File in `_projects/`
+
+Example: `_projects/my-project.md`
+
+### 2. Add Front Matter
+
+```yaml
 ---
-
-## Customizing the theme
-
-Index comes packed with lots of options to let you customize the theme.
-
+layout: project
+title: "My Project Name"
+date: 2026-01-01
+github_url: "https://github.com/username/repo"  # Optional
+excerpt: "A brief description of the project"
 ---
+```
 
-### The `_config.yml` file
+### 3. Write Project Details
 
-The main things you might need to change here are:
+Use markdown to describe your project. The full content will appear on the project's detail page.
 
-`site: Journal Jekyll Theme` – change this to your website's name
+## Customization
 
-`url:` – the full URL that your site will be hosted at, e.g. https://your-domain.com
+### Site Information
 
-`baseurl:` – add a base URL here if you will be publishing the site inside a folder, e.g. https://your-domain.com/project/ – or if you're hosting it as a 'project page' on GitHub Pages. Example: `baseurl: /project`
+Edit `_config.yml`:
 
-When using baseurl, you should reference images in your post/project Frontmatter **without** the baseurl, e.g. `/images/image.jpg` but images inside the Markdown content **should include** the baseurl snippet, e.g. `{{site.baseurl}}/images/image.jpg`
+```yaml
+title: Your Name
+description: Your bio/tagline
+url: "https://yourdomain.com"
+```
 
-`paginate: 6` – change this to set the number of blog posts on each page
+### Social Links
 
-You can also change more advanced things here like the path names, collections etc. You do not need to change any of these to achieve the same look as the demo, so best to leave everything else unless you are confident.
+Edit `index.html` and update the social links section with your actual URLs.
 
----
+### Colors
 
-### The `settings.yml` file
+All colors are in `styles.css` as CSS variables:
 
-You'll find this inside the `_data` folder – this is where you can set all of the theme options.
+```css
+:root {
+    --bg-primary: #1a1f23;      /* Main background */
+    --text-primary: #e8e6e3;    /* Main text */
+    --accent: #7c9885;          /* Links */
+    /* ... more colors ... */
+}
+```
 
-**Basic settings**
+### Typography
 
-`site_title` – change this to your website's title. This shows up in the browser's title bar, and in the sidebar.
-`site_tagline` – change this to be a description of your site. This shows up under the title/logo in the sidebar.
-`favicon_image` – change this to the location of your favicon image, which shows up in the browser's title bar.
+Change fonts by updating the Google Fonts import in `_layouts/default.html` and the CSS variables in `styles.css`:
 
-**Header settings**
+```css
+--font-serif: 'Your Font', Georgia, serif;
+--font-mono: 'Your Mono Font', monospace;
+```
 
-`logo_image` – if you'd like to use a logo instead of plain text title in your sidebar, enter the link to it here.
-`logo_width` – set the width (in pixels) that your logo should appear at. This is useful for adding retina display support – for example if your original image is 400px wide, you could set this value to `200` to display a retina-ready image.
-`overlay_opacity` – this sets the opacity of the sidebar overlay, and when you hover over portfolio items. Use a decimal value here, e.g. `0.8` will give you 80% opacity.
+## Markdown Tips
 
-**Menu settings**
+### Supported Formatting
 
-This allows you to set the links inside your menu. Add each one as a list item with a `title` and `url`. When hosting on GitHub Pages, make sure you leave a trailing `/` at the end of links to category pages (e.g. `/blog/` or `/projects/`).
+- **Headings**: `##`, `###`, `####`
+- **Bold**: `**text**` or `__text__`
+- **Italic**: `*text*` or `_text_`
+- **Links**: `[text](url)`
+- **Images**: `![alt](/images/image.jpg)`
+- **Code**: `` `inline` `` or triple backticks for blocks
+- **Lists**: `-` or `1.` 
+- **Blockquotes**: `> quote`
+- **Tables**: See example posts
 
-**Grid settings**
+### Code Syntax Highlighting
 
-`grid_spacing` – this sets the amount of spacing (in pixels) between each item in grid image galleries.
+Use triple backticks with language:
 
-**Contact settings**
-
-The theme comes with a pre-made contact form that you can use with [Formspree](https://formspree.io/create/jekyllthemes), which is free for up to 50 submissions per month. They also have two great paid plans that offer advanced features. Use the link above to set up your account and then paste the 'endpoint' integration code into the theme settings:
-
-`form_action` – this is the form endpoint attribute that you get from FormSpree, for example `https://formspree.io/abcdefgh`
-`confirmation_url` – by default the user is shown a default Formspree thank you page. If you have a premium plan, you can use this setting to provide an alternative URL for that page, for example `/thanks` – we have included a basic thank you page with the theme.
-`email_subject` – choose the subject of the email you receive from Formspree.
-`send_button_text` – change the text used on the form submit button.
-
-Hint: you can add the contact form to any page of your site using the include – `{% include contact-form.html %}` – for example if you wanted to have the contact form on your About page.
-
-**Social settings**
-
-Here you can add links to your profiles on social networks, and they'll be shown in the sidebar. Simply add your URL next to the ones you want to show.
-
-**Color settings**
-
-Here you can set all the different colors used by the theme. Try them out and find the color pallette that works for you!
-
-**Font settings**
-
-`font_embed` – add an embed code from an external font service. This allows you to use services like Google Fonts or Typekit.
-`title_font` – set the CSS name for the font used on titles.
-`body_font` – set the CSS anme for the font used for body text.
-`regular_weight` – set the font weight for regular styled text.
-`bold_weight` – set the font weight for bold styled text.
-
-Below these options, you'll see options for each typographical element used in the theme. For each, you can set the following options:
-
-`small_size` – the size (in pixels) used for this element on small size screens like mobile phones.
-`medium_size` – the size (in pixels) used for this element on medium size screens like tablets.
-`large_size` – the size (in pixels) used for this element on largers screens like laptops and desktops.
-`weight` – the font weight for this element.
-`letter_spacing` – the letter spacing (in ems) for this element.
-`line_height` – the line-height (in decimals) for this element.
-
-**Advanced options**
-
-`ajax_loading` – use `true` to enable Ajax loading throughout your site. Use `false` to disable it and load pages normally – this can be helpful if you're adding plugins or other javascript to your pages.
-`analytics_code` – use this option to add your Google Analytics code.
-`custom_styles` – use this option to add custom CSS styles to the theme.
-`header_js` – use this option to insert javascript into the header of the page.
-`footer_js` – use this option to insert javascript at the end of the page.
-
----
+````markdown
+```python
+def hello():
+    print("Hello!")
+```
+````
 
 ### Images
 
-Inside the `/images/` folder you'll find a few images included with the theme.
+Add images to an `/images/` folder and reference them:
 
-The images in the `/demo/` subfolder are used in the demo project, post and page – you can delete those if you don't need them.
+```markdown
+![Description](/images/photo.jpg)
+```
 
-`favicon.png` – you should replace this with the favicon image you'd like to use for your website.
+## File Naming Rules
 
----
+### Posts
+- **Format**: `YYYY-MM-DD-title.md`
+- **Example**: `2026-01-15-my-post.md`
+- **Important**: Jekyll requires this exact format!
 
-## Main pages
+### Projects
+- **Format**: `project-name.md` (no date needed)
+- **Example**: `promanage.md`
 
-The theme comes with some pages set up ready for your content.
+## Common Tasks
 
-### The home page – `/index.html`
+### Change Homepage Bio
 
-This is your website home page, showing your latest blog posts. You can edit some details in the Front Matter at the top of the page:
+Edit the `hero-bio` section in `index.html`
 
-`title` – this sets the page title, which shows up in the browser's title bar and on search engine results, social shares etc.
-`description` – this sets the page meta description, which shows up on search engine results, social shares etc.
-`featured_image` – this sets the page meta image, which shows up on social shares.
+### Update Social Links
 
-### The projects page – `/projects/index.html`
+Edit the `social-links` section in `index.html` with your actual profile URLs
 
-This is the blog listing page, which shows all your project posts. You can edit the same things as on the home page to customise it for your website, and also a `subtitle` field below the main page title.
+### Adjust Post Excerpt Length
 
----
+In `index.html` and `writing.html`, change the `truncatewords` number:
 
-## Projects, posts and pages
+```liquid
+{{ post.excerpt | strip_html | truncatewords: 30 }}
+```
 
-These control the main content of your website, and are found inside the `_projects`, `_posts` and `_pages` folders.
+### Change Number of Recent Posts
 
-Take a look at the demo content inside each folder for full descriptions on what you can do inside these, and to use as a template for your own content.
+In `index.html`, change the limit:
 
----
+```liquid
+{% for post in site.posts limit:25 %}
+```
 
-## Any questions?
+## Troubleshooting
 
-If you have any questions or feedback about the theme, don't hesitate to reach out to hello@jekyllthemes.io for 1-to-1 support direct from the developers!
+### Site Not Building on GitHub
 
-🤘
+1. Check GitHub Pages settings (Settings → Pages)
+2. Make sure source is set to "main" branch, "/ (root)"
+3. Check repository Actions tab for build errors
+
+### Posts Not Showing Up
+
+1. Check filename format: `YYYY-MM-DD-title.md`
+2. Make sure date in front matter matches filename
+3. Verify front matter is valid YAML
+
+## Next Steps
+
+1. **Update your bio** in `index.html`
+2. **Add your social links** (GitHub, LinkedIn, X, etc.)
+3. **Write your first post** in `_posts/`
+4. **Create your projects** in `_projects/`
+5. **Customize colors** if desired
+6. **Push to GitHub** and go live!
+
+## Resources
+
+- [Jekyll Documentation](https://jekyllrb.com/docs/)
+- [Kramdown Syntax](https://kramdown.gettalong.org/syntax.html)
+- [GitHub Pages + Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll)
+
+## License
+
+MIT License - use this template for your own site!
+
+## Credits
+
+Design inspired by [Brian Lovin](https://brianlovin.com/)

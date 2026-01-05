@@ -1,0 +1,27 @@
+---
+layout: default
+title: Writing
+---
+
+<section class="hero">
+    <h1 class="hero-title">Writing</h1>
+    <p class="hero-bio">
+        Collection of all my writing that I am publishing. You will find anything from construction information, foster parenting, and current event researching here.
+    </p>
+</section>
+
+<section class="posts-section">
+    <div class="posts-list">
+        {% for post in site.posts %}
+        <article class="post-card">
+            <time class="post-date">{{ post.date | date: "%b %d, %Y" }}</time>
+            <h3 class="post-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <p class="post-excerpt">
+                {{ post.excerpt | strip_html | truncatewords: 30 }}
+            </p>
+        </article>
+        {% endfor %}
+    </div>
+</section>

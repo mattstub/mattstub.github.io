@@ -1,57 +1,38 @@
-site: Jekyll Blog Theme
+# Site settings
+title: Matt Stub
+description: Manager at Matthews Plumbing, building tools to streamline construction workflows.
+url: "https://mattstub.com"
+baseurl: ""
 
-url: 'https://www.mattstub.com'
-baseurl: /
+# Build settings
+markdown: kramdown
+permalink: /writing/:year/:month/:day/:title/
 
+# Collections
 collections:
-  pages:
-    output: true
-    permalink: /:name
-  posts:
-    output: true
-    permalink: /blog/:slug
   projects:
     output: true
-    permalink: /project/:slug
+    permalink: /projects/:title/
 
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "default"
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  -
-    scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
 
-markdown: kramdown
-
+# Kramdown settings
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-  
-sass:
-  style: compressed
+  syntax_highlighter_opts:
+    css_class: 'highlight'
 
+# Plugins
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
 
-paginate: 6
-paginate_path: "/blog/page:num/"
-  
+# Pagination (if you want it later)
+# paginate: 10
+# paginate_path: "/writing/page:num/"
