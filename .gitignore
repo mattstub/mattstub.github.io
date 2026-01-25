@@ -4,3 +4,4 @@ _site/
 .env
 .wiki/
 .claude/
+.github/CLAUDE_PREFERENCES.md
