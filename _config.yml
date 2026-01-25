@@ -13,6 +13,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:title/
+  research:
+    output: true
+    permalink: /research/:title/
 
 # Exclude from processing
 exclude:
@@ -20,6 +23,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor
+  - _templates
 
 # Kramdown settings
 kramdown:

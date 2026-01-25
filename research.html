@@ -1,0 +1,31 @@
+---
+layout: default
+title: Research
+---
+
+<section class="hero">
+    <h1 class="hero-title">Research</h1>
+    <p class="hero-bio">
+        LLM-assisted research and analysis on various topics. These resources have been created with the help of Claude and other AI tools to investigate complex subjects and compile information.
+        This content is clearly marked to distinguish it from my own original writing.
+    </p>
+</section>
+
+<section class="posts-section">
+    <div class="projects-grid">
+        {% for item in site.research %}
+        <article class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">{{ item.title }}</h3>
+                <time class="project-date">{{ item.date | date: "%Y" }}</time>
+            </div>
+            <p class="project-description">
+                {{ item.excerpt | strip_html }}
+            </p>
+            <div class="project-links">
+                <a href="{{ item.url | relative_url }}" class="project-link">View Research</a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>

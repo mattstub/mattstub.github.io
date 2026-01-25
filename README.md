@@ -28,17 +28,81 @@ No build configuration needed - GitHub Pages handles Jekyll automatically!
 ├── _config.yml         # Jekyll configuration
 ├── _layouts/           # Page templates
 │   ├── default.html    # Base layout
-│   ├── post.html       # Blog post layout
+│   ├── post.html       # Blog post & research layout (with LLM attribution)
 │   └── project.html    # Project layout
 ├── _posts/             # Blog posts (markdown)
 │   └── YYYY-MM-DD-title.md
+├── _research/          # LLM-assisted research (markdown)
+│   └── topic-name.md
 ├── _projects/          # Project pages (markdown)
 │   └── project-name.md
 ├── index.html          # Homepage
 ├── writing.html        # All posts listing
+├── research.html       # Research listing
 ├── projects.html       # Projects listing
 ├── styles.css          # All styles
 └── Gemfile             # Ruby dependencies
+```
+
+## Content Types & Templates
+
+This site supports three content types: **Blog Posts**, **Research**, and **Projects**.
+
+**Quick Start**: Copy a template from `_templates/` to get started quickly:
+- `_templates/post-template.md` → Copy to `_posts/YYYY-MM-DD-title.md`
+- `_templates/research-template.md` → Copy to `_research/title.md`
+- `_templates/project-template.md` → Copy to `_projects/title.md`
+
+### Blog Posts
+
+Regular writing and articles.
+
+**Location**: `_posts/YYYY-MM-DD-title.md`
+
+**Template**:
+```yaml
+---
+layout: post
+title: "Your Post Title"
+date: 2026-01-15
+reading_time: 5
+excerpt: "A brief description that appears in post listings"
+---
+```
+
+### Research (LLM-Assisted Content)
+
+Research and analysis created with AI assistance. Automatically displays attribution.
+
+**Location**: `_research/title.md` or `_research/YYYY-MM-DD-title.md`
+
+**Template**:
+```yaml
+---
+layout: post
+title: "Research Topic"
+date: 2026-01-15
+excerpt: "Brief description of the research"
+llm_assisted: true
+llm_model: "Claude"  # Options: "Claude", "ChatGPT", "Gemini", or custom
+---
+```
+
+### Projects
+
+Showcase coding projects or large research series.
+
+**Location**: `_projects/project-name.md`
+
+**Template**:
+```yaml
+---
+layout: project
+title: "Project Name"
+date: 2026-01-01
+excerpt: "Brief description of the project"
+github_url: "https://github.com/username/repo"  # Optional
+---
 ```
 
 ## Writing a Blog Post
@@ -54,17 +118,7 @@ Example: `2026-01-15-my-awesome-post.md`
 
 ### 2. Add Front Matter
 
-Start your file with YAML front matter:
-
-```yaml
----
-layout: post
-title: "Your Post Title"
-date: 2026-01-15
-reading_time: 5
-excerpt: "A brief description that appears in post listings"
----
-```
+Use the Blog Posts template above
 
 ### 3. Write Your Content
 
@@ -96,6 +150,28 @@ git commit -m "Add new post"
 git push
 ```
 
+## Adding Research (LLM-Assisted Content)
+
+### 1. Create a Markdown File in `_research/`
+
+Example: `_research/michael-jackson-allegations.md`
+
+### 2. Add Front Matter with LLM Attribution
+
+Use the Research template above. The `llm_assisted: true` flag will automatically add a prominent attribution notice with a link to the LLM tool.
+
+### 3. Write Your Research
+
+Use markdown to write your research. The attribution notice will appear at the top of the page automatically.
+
+### Supported LLM Models
+
+The attribution system includes clickable links for:
+- **Claude** → links to https://claude.ai
+- **ChatGPT** → links to https://chat.openai.com
+- **Gemini** → links to https://gemini.google.com
+- **Custom** → displays the model name without a link
+
 ## Adding a Project
 
 ### 1. Create a Markdown File in `_projects/`
@@ -104,15 +180,7 @@ Example: `_projects/my-project.md`
 
 ### 2. Add Front Matter
 
-```yaml
----
-layout: project
-title: "My Project Name"
-date: 2026-01-01
-github_url: "https://github.com/username/repo"  # Optional
-excerpt: "A brief description of the project"
----
-```
+Use the Projects template above.
 
 ### 3. Write Project Details
 
@@ -195,6 +263,10 @@ Add images to an `/images/` folder and reference them:
 - **Format**: `YYYY-MM-DD-title.md`
 - **Example**: `2026-01-15-my-post.md`
 - **Important**: Jekyll requires this exact format!
+
+### Research
+- **Format**: `topic-name.md` or `YYYY-MM-DD-topic-name.md`
+- **Example**: `jackson-allegations.md` or `2026-01-15-jackson-allegations.md`
 
 ### Projects
 - **Format**: `project-name.md` (no date needed)

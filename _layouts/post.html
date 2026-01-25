@@ -14,6 +14,26 @@ layout: default
         </div>
     </header>
 
+    {% if page.llm_assisted %}
+    <div class="llm-attribution" style="background-color: #f6f8fa; border-left: 4px solid #0366d6; padding: 16px; margin: 24px 0; border-radius: 6px;">
+        <p style="margin: 0; font-size: 0.95em; color: #24292e;">
+            <strong>LLM-Assisted Research:</strong> This content has been created with the assistance of
+            {% if page.llm_model == "Claude" %}
+            <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" style="color: #0366d6;">Claude</a>
+            {% elsif page.llm_model == "ChatGPT" %}
+            <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" style="color: #0366d6;">ChatGPT</a>
+            {% elsif page.llm_model == "Gemini" %}
+            <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" style="color: #0366d6;">Gemini</a>
+            {% else %}
+            {{ page.llm_model }}
+            {% endif %}
+            and other AI language models.
+            While I've reviewed and curated this material, significant portions were generated through AI-assisted research and analysis.
+            This is clearly disclosed to distinguish it from my original writing.
+        </p>
+    </div>
+    {% endif %}
+
     <div class="article-content">
         {{ content }}
     </div>
