@@ -7,8 +7,6 @@ excerpt: "A collection of research excerpts I have utilized Claude and other LLM
 
 # Michael Jackson Allegations: A Comprehensive Look
 
-## Introduction
-
 Whether you believe Michael Jackson was a creep, a troubled individual or just a misunderstood soul probably has a lot of bearing in how you understand the story of the allegations he faced during his life. That perspective and your williningness to be told a narrative by the Main Stream Media shape what most people remember or understand about the whole situation. I will admit I was definitely a person who originally took everything at face value and took anything the news told me as truth. But with everything going on recently between the media, government and watching people in powerful circles operate in a different landscape, it seemed like a topic revisiting.
 
 The recent shit show that has been playing out in the U.S. right now with the Epstein Files has me realizing that there is a small group of people in this country that have been feeding us misinformation and narratives for years. So instead of falling off every deep social media wormhole as I usually have done to waste my time through the years. I've decided its time to use the power of A.I. to join the Researcher front. This collection of writings and Research Briefs will hopefully give people an area where they can come to get quick information and can make their own mind up about what might have happened.
@@ -20,7 +18,8 @@ I hope you find something informative in this research or learn something differ
 Enjoy!
 
 ### Research
-- [Jackson Allegations Explored](/writing/2026/01/03/michael-jackson-allegations/) - A first look into the Jackson Allegations with Claude
+
+- [Jackson Allegations Explored](/research/2026/01/03/michael-jackson-allegations/) - A first look into the Jackson Allegations with Claude
 
 ### Writing
 
