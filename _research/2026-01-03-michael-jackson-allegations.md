@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "Jackson Allegations Explored"
-date: 2026-01-03
-tags: [claude, michael jackson, allegations, research]
 project: Jackson Allegations
+date: 2026-01-03
+tags: [michael jackson, allegations]
 reading_time: 19
 excerpt: "A brief dive into the allegations against Michael Jackson and the people behind the allegations."
+llm_assisted: true
+llm_model: "Claude"  # Options: "Claude", "ChatGPT", "Gemini", or custom
 ---
 
 # Michael Jackson Allegations: A Brief Overview

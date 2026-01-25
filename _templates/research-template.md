@@ -1,7 +1,10 @@
 ---
 layout: post
 title: "Research Topic Title"
+project: "Your Project Title" # If there is one associated
 date: 2026-01-25
+tags: []
+reading_time: # use ReadingMeter.com
 excerpt: "Brief description of the research topic"
 llm_assisted: true
 llm_model: "Claude"  # Options: "Claude", "ChatGPT", "Gemini", or custom

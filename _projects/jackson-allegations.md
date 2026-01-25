@@ -1,10 +1,8 @@
 ---
-layout: post
+layout: project 
 title: "Michael Jackson Allegations"
 date: 2026-01-03
 excerpt: "A collection of research excerpts I have utilized Claude and other LLMs to investigate"
-llm_assisted: true
-llm_model: "Claude"
 ---
 
 # Michael Jackson Allegations: A Comprehensive Look
