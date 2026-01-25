@@ -15,7 +15,7 @@ This is an ongoing collection of resources and writings that I hope to be adding
 
 ## Research
 
-- [Requesting an IEP in Oklahoma for PTSD](/research/2026/01/0325/request-iep-in-oklahoma-for-ptsd/) - A collection of resources, checklists and sample letters I compiled with Claude
+- [Requesting an IEP in Oklahoma for PTSD](/research/2026/01/25/request-iep-in-oklahoma-for-ptsd/) - A collection of resources, checklists and sample letters I compiled with Claude
 
 ## Writing
 
