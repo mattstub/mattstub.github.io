@@ -9,8 +9,6 @@ llm_assisted: true # or true, if you used AI to assist in the writing
 llm_model: "Claude" # Options: "Claude", "ChatGPT", "Gemini", or custom
 ---
 
-# The Ring & The Machine
-
 - [Skip my commentary, get straight to the chat log](#chatlog)
 
 Like everyone else who keeps an eye on the internet for news and opinion, I stumbled onto the Matt Shumer [article](https://shumer.dev/something-big-is-happening). Honestly, I appreciate the insight — and I think people who are downplaying this are wildly out of touch with reality. So, in an attempt to wrestle with the humanity of this all, I did what any sane individual would do when faced with an article explaining the danger coming down the pipe with AI.

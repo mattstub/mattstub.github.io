@@ -10,8 +10,6 @@ llm_assisted: true
 llm_model: "Claude"  # Options: "Claude", "ChatGPT", "Gemini", or custom
 ---
 
-# Michael Jackson Allegations: A Brief Overview
-
 ## Table of Contents
 1. [Introduction to Allegations](/posts/)
 2. [The 1993 Jordan Chandler Allegations](#the-1993-jordan-chandler-allegations)

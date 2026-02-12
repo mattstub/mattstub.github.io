@@ -10,8 +10,6 @@ llm_assisted: true
 llm_model: "Claude"  # Options: "Claude", "ChatGPT", "Gemini", or custom
 ---
 
-# Guide to Requesting an IEP Evaluation based on PTSD in Oklahoma
-
 Sadly, with many foster children in the system, there are high levels of PTSD that contribute to a struggle and decline in their education. Below is a bunch of resources, checklist and tools Parents and Foster Parents can utilize to help piece together to advocate for their children's needs.
 
 ## Table of Contents

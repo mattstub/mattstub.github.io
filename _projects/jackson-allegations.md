@@ -5,7 +5,7 @@ date: 2026-01-03
 excerpt: "A collection of research excerpts I have utilized Claude and other LLMs to investigate"
 ---
 
-# Michael Jackson Allegations: A Comprehensive Look
+# A Dissenting Opinion
 
 Whether you believe Michael Jackson was a creep, a troubled individual or just a misunderstood soul probably has a lot of bearing in how you understand the story of the allegations he faced during his life. That perspective and your williningness to be told a narrative by the Main Stream Media shape what most people remember or understand about the whole situation. I will admit I was definitely a person who originally took everything at face value and took anything the news told me as truth. But with everything going on recently between the media, government and watching people in powerful circles operate in a different landscape, it seemed like a topic revisiting.
 
