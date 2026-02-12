@@ -191,6 +191,7 @@ body {
 .main-content {
     padding: var(--space-2xl);
     max-width: 900px;
+    width: 100%;
 }
 
 /* ==================== */
