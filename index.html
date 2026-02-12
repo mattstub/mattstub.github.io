@@ -19,7 +19,20 @@ title: Home
     <div class="posts-list posts-list--compact">
         {% for post in site.posts limit:3 %}
         <article class="post-card post-card--compact">
-            <time class="post-date">{{ post.date | date: "%b %d, %Y" }}</time>
+            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <time class="post-date">{{ post.date | date: "%b %d, %Y" }}</time>
+                {% if post.llm_assisted %}
+                {% if post.llm_model == "Claude" %}
+                <span class="llm-badge llm-badge--claude">Claude</span>
+                {% elsif post.llm_model == "ChatGPT" %}
+                <span class="llm-badge llm-badge--chatgpt">ChatGPT</span>
+                {% elsif post.llm_model == "Gemini" %}
+                <span class="llm-badge llm-badge--gemini">Gemini</span>
+                {% else %}
+                <span class="llm-badge llm-badge--other">{{ post.llm_model }}</span>
+                {% endif %}
+                {% endif %}
+            </div>
             <h3 class="post-title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </h3>
@@ -36,7 +49,20 @@ title: Home
     <div class="projects-grid projects-grid--compact">
         {% for project in site.projects limit:2 %}
         <article class="project-card project-card--compact">
-            <h3 class="project-title">{{ project.title }}</h3>
+            <div class="project-header">
+                <h3 class="project-title">{{ project.title }}</h3>
+                {% if project.llm_assisted %}
+                {% if project.llm_model == "Claude" %}
+                <span class="llm-badge llm-badge--claude">Claude</span>
+                {% elsif project.llm_model == "ChatGPT" %}
+                <span class="llm-badge llm-badge--chatgpt">ChatGPT</span>
+                {% elsif project.llm_model == "Gemini" %}
+                <span class="llm-badge llm-badge--gemini">Gemini</span>
+                {% else %}
+                <span class="llm-badge llm-badge--other">{{ project.llm_model }}</span>
+                {% endif %}
+                {% endif %}
+            </div>
             <p class="project-description">{{ project.excerpt | strip_html | truncatewords: 20 }}</p>
             <a href="{{ project.url | relative_url }}" class="project-link">View Details</a>
         </article>
@@ -52,7 +78,20 @@ title: Home
     <div class="projects-grid projects-grid--compact">
         {% for item in site.research limit:2 %}
         <article class="project-card project-card--compact">
-            <h3 class="project-title">{{ item.title }}</h3>
+            <div class="project-header">
+                <h3 class="project-title">{{ item.title }}</h3>
+                {% if item.llm_assisted %}
+                {% if item.llm_model == "Claude" %}
+                <span class="llm-badge llm-badge--claude">Claude</span>
+                {% elsif item.llm_model == "ChatGPT" %}
+                <span class="llm-badge llm-badge--chatgpt">ChatGPT</span>
+                {% elsif item.llm_model == "Gemini" %}
+                <span class="llm-badge llm-badge--gemini">Gemini</span>
+                {% else %}
+                <span class="llm-badge llm-badge--other">{{ item.llm_model }}</span>
+                {% endif %}
+                {% endif %}
+            </div>
             <p class="project-description">{{ item.excerpt | strip_html | truncatewords: 20 }}</p>
             <a href="{{ item.url | relative_url }}" class="project-link">View Research</a>
         </article>

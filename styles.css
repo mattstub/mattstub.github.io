@@ -726,3 +726,82 @@ body {
 .post-card:nth-child(3) { animation-delay: 0.15s; }
 .post-card:nth-child(4) { animation-delay: 0.2s; }
 .post-card:nth-child(5) { animation-delay: 0.25s; }
+
+/* ==================== */
+/* LLM Attribution Badge */
+/* ==================== */
+
+.llm-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Claude - Anthropic orange/terracotta */
+.llm-badge--claude {
+    background-color: rgba(204, 120, 92, 0.15);
+    color: #cc785c;
+    border: 1px solid rgba(204, 120, 92, 0.3);
+}
+
+.llm-badge--claude:hover {
+    background-color: rgba(204, 120, 92, 0.25);
+    border-color: rgba(204, 120, 92, 0.5);
+}
+
+/* ChatGPT - OpenAI green */
+.llm-badge--chatgpt {
+    background-color: rgba(16, 163, 127, 0.15);
+    color: #10a37f;
+    border: 1px solid rgba(16, 163, 127, 0.3);
+}
+
+.llm-badge--chatgpt:hover {
+    background-color: rgba(16, 163, 127, 0.25);
+    border-color: rgba(16, 163, 127, 0.5);
+}
+
+/* Gemini - Google blue */
+.llm-badge--gemini {
+    background-color: rgba(66, 133, 244, 0.15);
+    color: #4285f4;
+    border: 1px solid rgba(66, 133, 244, 0.3);
+}
+
+.llm-badge--gemini:hover {
+    background-color: rgba(66, 133, 244, 0.25);
+    border-color: rgba(66, 133, 244, 0.5);
+}
+
+/* Generic/Other - neutral */
+.llm-badge--other {
+    background-color: rgba(138, 135, 132, 0.15);
+    color: var(--text-secondary);
+    border: 1px solid rgba(138, 135, 132, 0.3);
+}
+
+.llm-badge--other:hover {
+    background-color: rgba(138, 135, 132, 0.25);
+    border-color: rgba(138, 135, 132, 0.5);
+}
+
+/* Badge icon */
+.llm-badge__icon {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+/* Badge in card header - position it nicely */
+.project-header .llm-badge,
+.post-meta .llm-badge {
+    margin-left: auto;
+}

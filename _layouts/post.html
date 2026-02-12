@@ -11,28 +11,32 @@ layout: default
             <span>·</span>
             <span>{{ page.reading_time }} min read</span>
             {% endif %}
+            {% if page.llm_assisted %}
+            <span>·</span>
+            {% if page.llm_model == "Claude" %}
+            <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="llm-badge llm-badge--claude" title="This content was created with AI assistance">
+                <svg class="llm-badge__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                Claude Assisted
+            </a>
+            {% elsif page.llm_model == "ChatGPT" %}
+            <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="llm-badge llm-badge--chatgpt" title="This content was created with AI assistance">
+                <svg class="llm-badge__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                ChatGPT Assisted
+            </a>
+            {% elsif page.llm_model == "Gemini" %}
+            <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="llm-badge llm-badge--gemini" title="This content was created with AI assistance">
+                <svg class="llm-badge__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                Gemini Assisted
+            </a>
+            {% else %}
+            <span class="llm-badge llm-badge--other" title="This content was created with AI assistance">
+                <svg class="llm-badge__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                {{ page.llm_model }} Assisted
+            </span>
+            {% endif %}
+            {% endif %}
         </div>
     </header>
-
-    {% if page.llm_assisted %}
-    <div class="llm-attribution" style="background-color: #f6f8fa; border-left: 4px solid #0366d6; padding: 16px; margin: 24px 0; border-radius: 6px;">
-        <p style="margin: 0; font-size: 0.95em; color: #24292e;">
-            <strong>LLM-Assisted Research:</strong> This content has been created with the assistance of
-            {% if page.llm_model == "Claude" %}
-            <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" style="color: #0366d6;">Claude</a>
-            {% elsif page.llm_model == "ChatGPT" %}
-            <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" style="color: #0366d6;">ChatGPT</a>
-            {% elsif page.llm_model == "Gemini" %}
-            <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" style="color: #0366d6;">Gemini</a>
-            {% else %}
-            {{ page.llm_model }}
-            {% endif %}
-            and other AI language models.
-            While I've reviewed and curated this material, significant portions were generated through AI-assisted research and analysis.
-            This is clearly disclosed to distinguish it from my original writing.
-        </p>
-    </div>
-    {% endif %}
 
     <div class="article-content">
         {{ content }}

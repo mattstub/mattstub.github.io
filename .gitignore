@@ -1,7 +1,53 @@
+# Jekyll build artifacts
 _site/
 .sass-cache/
 .jekyll-cache/
+.jekyll-metadata
+
+# Ruby/Bundler
+Gemfile.lock
+vendor/
+.bundle/
+
+# Environment and secrets
 .env
-.wiki/
+.env.*
+*.pem
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+
+# Claude Code
 .claude/
+
+# GitHub
 .github/CLAUDE_PREFERENCES.md
+
+# Node (if using any build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Drafts (if you want to keep local drafts out of repo)
+# _drafts/
+
+# Misc
+*.log
+*.bak
+*.tmp
+.wiki/

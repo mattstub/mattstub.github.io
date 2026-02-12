@@ -14,7 +14,20 @@ title: Writing
     <div class="posts-list">
         {% for post in site.posts %}
         <article class="post-card">
-            <time class="post-date">{{ post.date | date: "%b %d, %Y" }}</time>
+            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <time class="post-date">{{ post.date | date: "%b %d, %Y" }}</time>
+                {% if post.llm_assisted %}
+                {% if post.llm_model == "Claude" %}
+                <span class="llm-badge llm-badge--claude">Claude</span>
+                {% elsif post.llm_model == "ChatGPT" %}
+                <span class="llm-badge llm-badge--chatgpt">ChatGPT</span>
+                {% elsif post.llm_model == "Gemini" %}
+                <span class="llm-badge llm-badge--gemini">Gemini</span>
+                {% else %}
+                <span class="llm-badge llm-badge--other">{{ post.llm_model }}</span>
+                {% endif %}
+                {% endif %}
+            </div>
             <h3 class="post-title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </h3>
