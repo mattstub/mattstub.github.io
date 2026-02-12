@@ -15,7 +15,7 @@ collections:
     permalink: /projects/:title/
   research:
     output: true
-    permalink: /research/:year/:month/:day/:title
+    permalink: /research/:year/:month/:day/:title/
 
 # Exclude from processing
 exclude:

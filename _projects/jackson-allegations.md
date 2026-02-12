@@ -19,7 +19,7 @@ Enjoy!
 
 ### Research
 
-- [Jackson Allegations Explored](/research/2026/01/03/michael-jackson-allegations) - A first look into the Jackson Allegations with Claude
+- [Jackson Allegations Explored](/research/2026/01/03/michael-jackson-allegations/) - A first look into the Jackson Allegations with Claude
 
 ### Writing
 
