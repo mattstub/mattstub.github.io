@@ -526,6 +526,8 @@ body {
 .article-content {
     font-size: 1rem;
     line-height: 1.75;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .article-content h2 {
@@ -556,6 +558,9 @@ body {
     text-decoration: none;
     border-bottom: 1px solid var(--accent);
     transition: all 0.2s ease;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .article-content a:hover {
