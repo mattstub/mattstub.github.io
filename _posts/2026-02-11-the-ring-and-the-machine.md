@@ -35,9 +35,9 @@ This conversation might be unsettling if you haven't thought critically about wh
 
 Christ is King.
 
-# A Conversation With Claude: AI, Power, and the Epstein Files
+# Chat w/ Claude: AI, Power, & the E Files
 
-*February 11, 2026 — An unedited conversation between a construction manager and an AI about what's coming.*
+*February 11, 2026 — An unedited chat between a guy and an AI.*
 
 ---
 

@@ -7,30 +7,21 @@
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     {% seo %}
     <script defer src="https://mds-home.tail25c0fc.ts.net/script.js" data-website-id="28ee85ee-cdfc-4e02-ab19-674f902a24cf"></script>
 </head>
 <body>
-    <nav class="nav-container">
-        <div class="nav-content">
-            <a href="{{ '/' | relative_url }}" class="nav-logo">{{ site.title }}</a>
-            <div class="nav-links">
-                <a href="{{ '/writing/' | relative_url }}">Writing</a>
-                <a href="{{ '/projects/' | relative_url }}">Projects</a>
-                <a href="{{ '/research/' | relative_url }}">Research</a>
-            </div>
-        </div>
-    </nav>
+    {% include mobile-nav.html %}
 
-    <main class="container">
-        {{ content }}
-    </main>
+    <div class="site-layout">
+        {% include sidebar.html %}
 
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
-        </div>
-    </footer>
+        <main class="main-content">
+            {{ content }}
+        </main>
+    </div>
+
+    <script src="{{ '/assets/js/nav-toggle.js' | relative_url }}"></script>
 </body>
 </html>
