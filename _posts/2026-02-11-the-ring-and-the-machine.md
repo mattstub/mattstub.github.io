@@ -3,7 +3,7 @@ layout: post
 title: "The Ring and The Machine"
 date: 2026-02-11
 tags: [claude]
-reading_time: 5 # use ReadingMeter.com
+reading_time: 16 # use ReadingMeter.com
 excerpt: "A conversation with Claude about the future of AI and humanity"
 llm_assisted: true # or true, if you used AI to assist in the writing
 llm_model: "Claude" # Options: "Claude", "ChatGPT", "Gemini", or custom
